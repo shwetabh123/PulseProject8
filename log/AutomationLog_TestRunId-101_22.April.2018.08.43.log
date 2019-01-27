@@ -1,0 +1,7 @@
+2018-04-22 20:43:41 INFO  BaseTest:151 - Chrome Browser opened
+2018-04-22 20:43:41 INFO  BaseTest:361 - Chrome Browser opened
+2018-04-22 20:43:41 INFO  BaseTest:434 - Implicit wait given
+2018-04-22 20:43:56 INFO  BaseTest:443 - Url opened
+2018-04-22 20:43:56 INFO  ExtentReportListener:57 - testValidLogin1  test is started
+2018-04-22 20:43:56 INFO  ExtentReportListener:82 - testValidLogin1  test is failed
+2018-04-22 20:43:57 INFO  ExtentReportListener:82 - testValidLogin1  test is failed

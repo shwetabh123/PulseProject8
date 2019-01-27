@@ -1,0 +1,6 @@
+2018-09-09 10:05:20 INFO  ValidLogin:98 - type username
+2018-09-09 10:05:21 INFO  ValidLogin:105 - type password
+2018-09-09 10:05:21 INFO  ValidLogin2:98 - type username
+2018-09-09 10:05:27 INFO  ValidLogin:117 - click select
+2018-09-09 10:05:27 INFO  BasePage:746 - keyerrormsg=no such session
+2018-09-09 10:05:33 INFO  ValidLogin:129 - click dropdown 

@@ -1,0 +1,7 @@
+2018-08-28 14:37:08 INFO  BaseTest:269 - Chrome Browser opened
+2018-08-28 14:37:08 INFO  BaseTest:475 - Chrome Browser opened
+2018-08-28 14:37:08 INFO  BaseTest:576 - Implicit wait given
+2018-08-28 14:40:00 INFO  BaseTest:585 - Url opened
+2018-08-28 14:40:00 INFO  BaseTest:604 - Executing Test Case id is : 281
+2018-08-28 14:40:01 INFO  ValidLogin:89 - Executing  Step No :1
+2018-08-28 14:40:01 INFO  ValidLogin:92 - Verifying CeB Logo

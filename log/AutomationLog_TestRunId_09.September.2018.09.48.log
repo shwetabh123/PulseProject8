@@ -1,0 +1,8 @@
+2018-09-09 09:48:07 INFO  ValidLogin2:127 - type username
+2018-09-09 09:48:07 INFO  ValidLogin:127 - type username
+2018-09-09 09:48:08 INFO  ValidLogin:161 - type password
+2018-09-09 09:48:13 INFO  ValidLogin:191 - click select
+2018-09-09 09:48:21 INFO  ValidLogin:221 - click dropdown 
+2018-09-09 09:48:27 INFO  ValidLogin:247 - click select
+2018-09-09 09:48:39 INFO  ValidLogin:273 - click arrrow down
+2018-09-09 09:48:41 INFO  ValidLogin:277 - click logout

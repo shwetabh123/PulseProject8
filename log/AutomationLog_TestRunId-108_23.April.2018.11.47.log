@@ -1,0 +1,8 @@
+2018-04-23 11:47:22 INFO  BaseTest:151 - Chrome Browser opened
+2018-04-23 11:47:22 INFO  BaseTest:350 - Chrome Browser opened
+2018-04-23 11:47:22 INFO  BaseTest:419 - Implicit wait given
+2018-04-23 11:47:31 INFO  BaseTest:428 - Url opened
+2018-04-23 11:47:32 INFO  BaseTest:448 - Executing Test Case id is : 109
+2018-04-23 11:47:32 INFO  ExtentReportListener:56 - testcolor  test is started
+2018-04-23 11:47:32 INFO  ExtentReportListener:81 - testcolor  test is failed
+2018-04-23 11:47:32 INFO  ExtentReportListener:81 - testcolor  test is failed

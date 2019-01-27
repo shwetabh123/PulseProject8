@@ -1,0 +1,25 @@
+2018-04-22 14:18:11 INFO  BaseTest:405 - FireFox Browser opened
+2018-04-22 14:18:12 INFO  BaseTest:430 - Implicit wait given
+2018-04-22 14:18:24 INFO  BaseTest:439 - Url opened
+2018-04-22 14:18:25 INFO  BaseTest:459 - Executing Test Case id is : 91
+2018-04-22 14:18:25 INFO  ValidLogin:95 - Executing  Step No :1
+2018-04-22 14:18:25 INFO  ValidLogin:98 - Verifying CeB Logo
+2018-04-22 14:18:25 INFO  ValidLogin:112 - Executing  Step No :2
+2018-04-22 14:18:30 INFO  ValidLogin:116 - type username
+2018-04-22 14:18:36 INFO  ValidLogin:145 - Executing  Step No :3
+2018-04-22 14:18:36 INFO  ValidLogin:150 - type password
+2018-04-22 14:18:41 INFO  ValidLogin:178 - Executing  Step No :4
+2018-04-22 14:18:41 INFO  ValidLogin:180 - click select
+2018-04-22 14:18:51 INFO  ValidLogin:208 - Executing  Step No :5
+2018-04-22 14:18:51 INFO  ValidLogin:210 - click dropdown 
+2018-04-22 14:18:57 INFO  ValidLogin:235 - Executing  Step No :6
+2018-04-22 14:18:57 INFO  ValidLogin:236 - click select
+2018-04-22 14:19:23 INFO  BasePage:192 - Mouse Hover to Element and perform click
+2018-04-22 14:19:28 INFO  BasePage:218 - Mouse Hover to Element and perform click succeed
+2018-04-22 14:20:21 INFO  BasePage:904 - keyerrormsg=Element must be user-editable in order to clear it.
+2018-04-22 14:20:21 INFO  BasePage:192 - Mouse Hover to Element and perform click
+2018-04-22 14:20:26 INFO  BasePage:218 - Mouse Hover to Element and perform click succeed
+2018-04-22 14:20:26 INFO  BasePage:192 - Mouse Hover to Element and perform click
+2018-04-22 14:21:12 INFO  BasePage:215 - Element not found in the cache - perhaps the page has changed since it was looked up
+2018-04-22 14:21:12 INFO  BasePage:192 - Mouse Hover to Element and perform click
+2018-04-22 14:21:52 INFO  BasePage:215 - Unable to locate element: {"method":"xpath","selector":"//A[contains(@href, '#favorability')]"}

@@ -1,0 +1,25 @@
+2018-04-22 13:59:05 INFO  BaseTest:405 - FireFox Browser opened
+2018-04-22 13:59:09 INFO  BaseTest:430 - Implicit wait given
+2018-04-22 13:59:18 INFO  BaseTest:439 - Url opened
+2018-04-22 13:59:18 INFO  BaseTest:459 - Executing Test Case id is : 88
+2018-04-22 13:59:19 INFO  ValidLogin:95 - Executing  Step No :1
+2018-04-22 13:59:19 INFO  ValidLogin:98 - Verifying CeB Logo
+2018-04-22 13:59:20 INFO  ValidLogin:112 - Executing  Step No :2
+2018-04-22 13:59:25 INFO  ValidLogin:116 - type username
+2018-04-22 13:59:30 INFO  ValidLogin:145 - Executing  Step No :3
+2018-04-22 13:59:30 INFO  ValidLogin:150 - type password
+2018-04-22 13:59:36 INFO  ValidLogin:178 - Executing  Step No :4
+2018-04-22 13:59:36 INFO  ValidLogin:180 - click select
+2018-04-22 13:59:50 INFO  ValidLogin:208 - Executing  Step No :5
+2018-04-22 13:59:50 INFO  ValidLogin:210 - click dropdown 
+2018-04-22 13:59:56 INFO  ValidLogin:235 - Executing  Step No :6
+2018-04-22 13:59:56 INFO  ValidLogin:236 - click select
+2018-04-22 14:00:14 INFO  BasePage:192 - Mouse Hover to Element and perform click
+2018-04-22 14:00:50 INFO  BasePage:215 - Returned value cannot be converted to WebElement: To display this page, Firefox must send information that will repeat any action (such as a search or order confirmation) that was performed earlier.
+2018-04-22 14:00:50 INFO  BasePage:904 - keyerrormsg=Unexpected modal dialog (text: To display this page, Firefox must send information that will repeat any action (such as a search or order confirmation) that was performed earlier.): To display this page, Firefox must send information that will repeat any action (such as a search or order confirmation) that was performed earlier.
+2018-04-22 14:00:50 INFO  BasePage:192 - Mouse Hover to Element and perform click
+2018-04-22 14:00:51 INFO  BasePage:215 - Returned value cannot be converted to WebElement: To display this page, Firefox must send information that will repeat any action (such as a search or order confirmation) that was performed earlier.
+2018-04-22 14:00:51 INFO  BasePage:192 - Mouse Hover to Element and perform click
+2018-04-22 14:00:51 INFO  BasePage:215 - Unexpected modal dialog (text: To display this page, Firefox must send information that will repeat any action (such as a search or order confirmation) that was performed earlier.): To display this page, Firefox must send information that will repeat any action (such as a search or order confirmation) that was performed earlier.
+2018-04-22 14:00:51 INFO  BasePage:192 - Mouse Hover to Element and perform click
+2018-04-22 14:00:52 INFO  BasePage:215 - Returned value cannot be converted to WebElement: To display this page, Firefox must send information that will repeat any action (such as a search or order confirmation) that was performed earlier.
