@@ -52,7 +52,7 @@ import generic.Excel;
 	
 	  Excel eLib = new Excel();
 	
-	String url = eLib.getCellValue(path,"PreCon", 1, 0);
+	String url = eLib.getCellValue(pathexcel,"PreCon", 1, 0);
 	
 	  public static String logfiletimestamp;
 	    

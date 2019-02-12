@@ -1,0 +1,17 @@
+2019-02-11 14:31:17 INFO  AddParticipant:99 - type username
+2019-02-11 14:31:23 INFO  ValidLogin2:101 - type username
+2019-02-11 14:31:24 INFO  ValidLogin2:114 - type password
+2019-02-11 14:31:33 INFO  AddParticipant:104 - type password
+2019-02-11 14:31:41 INFO  ValidLogin2:126 - click login
+2019-02-11 14:31:42 INFO  ValidLogin:101 - type username
+2019-02-11 14:31:52 INFO  AddParticipant:110 - click login
+2019-02-11 14:31:58 INFO  ValidLogin:114 - type password
+2019-02-11 14:31:58 INFO  ValidLogin2:138 - click dropdown 
+2019-02-11 14:32:07 INFO  AddParticipant:115 - click dropdown 
+2019-02-11 14:32:13 INFO  ValidLogin2:151 - click select
+2019-02-11 14:32:13 INFO  ValidLogin:126 - click Login
+2019-02-11 14:32:31 INFO  ValidLogin:138 - click dropdown 
+2019-02-11 14:32:40 INFO  AddParticipant:123 - click select
+2019-02-11 14:32:46 INFO  ValidLogin:151 - click select
+2019-02-11 14:33:07 INFO  ValidLogin2:166 - click arrrow down
+2019-02-11 14:33:25 INFO  ValidLogin2:171 - click logout

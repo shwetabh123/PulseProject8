@@ -1,0 +1,3 @@
+2019-02-11 12:44:30 INFO  AddParticipant:99 - type username
+2019-02-11 12:44:33 INFO  BasePage:1113 - keyerrormsg=stale element reference: element is not attached to the page document
+2019-02-11 12:44:48 INFO  AddParticipant:104 - type password

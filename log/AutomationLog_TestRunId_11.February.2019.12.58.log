@@ -1,0 +1,5 @@
+2019-02-11 12:59:24 INFO  ValidLogin:101 - type username
+2019-02-11 12:59:40 INFO  ValidLogin:114 - type password
+2019-02-11 12:59:56 INFO  ValidLogin:126 - click Login
+2019-02-11 13:00:14 INFO  ValidLogin:138 - click dropdown 
+2019-02-11 13:00:30 INFO  ValidLogin:151 - click select

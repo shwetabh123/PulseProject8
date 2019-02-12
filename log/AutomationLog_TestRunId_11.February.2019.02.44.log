@@ -1,0 +1,34 @@
+2019-02-11 14:46:41 INFO  ValidLogin:101 - type username
+2019-02-11 14:46:41 INFO  ValidLogin2:101 - type username
+2019-02-11 14:46:43 INFO  ValidLogin2:114 - type password
+2019-02-11 14:46:58 INFO  ValidLogin:114 - type password
+2019-02-11 14:46:58 INFO  AddParticipant:99 - type username
+2019-02-11 14:46:59 INFO  ValidLogin2:126 - click login
+2019-02-11 14:47:14 INFO  ValidLogin:126 - click Login
+2019-02-11 14:47:14 INFO  AddParticipant:104 - type password
+2019-02-11 14:47:16 INFO  ValidLogin2:138 - click dropdown 
+2019-02-11 14:47:31 INFO  ValidLogin:138 - click dropdown 
+2019-02-11 14:47:31 INFO  AddParticipant:110 - click login
+2019-02-11 14:47:32 INFO  ValidLogin2:151 - click select
+2019-02-11 14:47:47 INFO  ValidLogin:151 - click select
+2019-02-11 14:47:47 INFO  AddParticipant:115 - click dropdown 
+2019-02-11 14:48:09 INFO  ValidLogin2:166 - click arrrow down
+2019-02-11 14:48:15 INFO  AddParticipant:123 - click select
+2019-02-11 14:48:26 INFO  ValidLogin2:171 - click logout
+2019-02-11 14:48:33 INFO  ValidLogin:168 - click arrrow down
+2019-02-11 14:48:48 INFO  AddParticipant:135 - click setings
+2019-02-11 14:48:50 INFO  ValidLogin:174 - click logout
+2019-02-11 14:49:03 INFO  AddParticipant:140 - click CD
+2019-02-11 14:49:34 INFO  BasePage:2668 - In GetDownloadedFileDetails
+2019-02-11 14:49:34 INFO  BasePage:2706 - NoOfFiles4
+2019-02-11 14:49:34 INFO  BasePage:2714 - DownloadedFiles-->.gitignore
+2019-02-11 14:49:34 INFO  BasePage:2714 - DownloadedFiles-->CompanyDirectoryParticipantImportTemplate_7.23.2018.xlsx
+2019-02-11 14:49:34 INFO  BasePage:2714 - DownloadedFiles-->SpotlightReport65872573979636679169600203613.ppt
+2019-02-11 14:49:34 INFO  BasePage:2714 - DownloadedFiles-->SpotlightReport65872573979636679178778075560.ppt
+2019-02-11 14:49:34 INFO  BasePage:2722 - GetDownloadedFileDetails Executed
+2019-02-11 14:50:07 INFO  BasePage:2749 - In GetLastDownloadedFile
+2019-02-11 14:50:07 INFO  BasePage:2803 - In setRunTimeVariable 
+2019-02-11 14:50:07 INFO  BasePage:2808 - In setRunTimeVariable Key:  Value: added successfully
+2019-02-11 14:50:07 INFO  BasePage:2949 - In setRunTimeVariable 
+2019-02-11 14:50:07 INFO  BasePage:2951 - In setRunTimeVariable Key: GetLastDownloadedFile Value: SpotlightReport65872573979636679178778075560.pptadded successfully
+2019-02-11 14:50:07 INFO  BasePage:2816 - GetLastDownloadedFile name is SpotlightReport65872573979636679178778075560.ppt

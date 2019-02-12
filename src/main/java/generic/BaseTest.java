@@ -65,12 +65,9 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public abstract class BaseTest implements IAutoConst{
 	
-	//public static RemoteWebDriver driver;
-	
-	
-	public  RemoteWebDriver driver=null;
-	
-	// protected  WebDriver driver1;
+
+	public    RemoteWebDriver driver=null;
+
 	public static int REPEAT_MINUS = 100;
 	
 Logger APP_LOGS = Logger.getLogger("BaseTest");
@@ -78,11 +75,28 @@ Logger APP_LOGS = Logger.getLogger("BaseTest");
 	
 	public static String scrshotFolderLoc;
 
-	public static String path ="D:\\ShwetabhWorkspace\\PulseProject8\\data\\preCondInput.xlsx";
+
+	  // public static String pathexcel ="C:\\Users\\Admin\\workspace\\PulseProject8\\data\\preCondInput.xlsx";
+
+	   final static String workingDirexcel = System.getProperty("user.dir");
+		
+		  //  final static String filePath = "./test-output/MyReport.html";
+		  final static String filePathexcel = "\\data\\preCondInput.xlsx";
+
+		  public static String pathexcel =workingDirexcel+filePathexcel;
+		
+		
+		
+		 final static String workingDir = System.getProperty("user.dir");
+			
+		  //  final static String filePath = "./test-output/MyReport.html";
+		  final static String filePath = "\\test-output\\MyReport.html";
+
+		  public static String path =workingDir+filePath;
+		
+			
 	
-//	BasePage b=new BasePage(driver1);
-	
-	
+
 	
 	static int testRunId=000000;
 	
@@ -103,7 +117,7 @@ Logger APP_LOGS = Logger.getLogger("BaseTest");
 	//	String browserType = eLib.getCellValue(path,"PreCon", 1, 1);
 		
 		
-		 int time = Integer.parseInt((eLib.getCellValue(path,"PreCon", 1, 2)).replace(".0", ""));
+	//	 int time = Integer.parseInt((eLib.getCellValue(path,"PreCon", 1, 2)).replace(".0", ""));
 		
 		/*
 		@BeforeTest
@@ -144,7 +158,9 @@ Logger APP_LOGS = Logger.getLogger("BaseTest");
 			
 			System.out.println("*******************");
 			
-	
+			
+				
+				
 			driver = getDriver(browser);
 			
 		
@@ -159,11 +175,10 @@ Logger APP_LOGS = Logger.getLogger("BaseTest");
 
 
 		
-		public static RemoteWebDriver getDriver(String browser) throws Exception {
-			
+		public static  RemoteWebDriver getDriver(String browser) throws Exception {
+	
 			//extentTest =extent.startTest(method.getName());
 			
-		
 			 String fileName=null;
 			   
 	    	 Date d = new Date();
@@ -174,32 +189,26 @@ Logger APP_LOGS = Logger.getLogger("BaseTest");
 
 	 	   logfiletimestamp = "AutomationLog_TestRunId_"+format.format(d);
 	 	   
-	 	   
-	 	   
 		    System.setProperty("autologname",logfiletimestamp);
 
 		      PropertyConfigurator.configure("Log4j.properties");
 		    
         	String browserType = eLib.getCellValue(path,"PreCon", 1, 1);
 	
-			
-	//		BasePage b=new BasePage(driver1);
-			
-			
-		 //    downloadPath=b.preInitialize();
+
 		
-					 
-			
-			return new RemoteWebDriver(new URL("http://10.111.108.157:4444/wd/hub"), getBrowserCapabilities(browser));
-		
+		//	return new RemoteWebDriver(new URL("http://10.111.108.157:4444/wd/hub"), getBrowserCapabilities(browser));
+        	return new RemoteWebDriver(new URL("http://192.168.2.6:4444/wd/hub"), getBrowserCapabilities(browser));
 			
 		}
 		
-		public static DesiredCapabilities getBrowserCapabilities(String browser) throws MalformedURLException
+		public static   DesiredCapabilities getBrowserCapabilities(String browser) throws Exception
 		
 		{
 			
-
+		    
+		
+			 
             DesiredCapabilities dr=null;
 
             
@@ -211,43 +220,45 @@ Logger APP_LOGS = Logger.getLogger("BaseTest");
 			
 			{
 			case "firefox":
-				System.out.println("Opening firefox driver");
-
-			//	System.setProperty("webdriver.chrome.driver", "C:\\Users\\ssrivastava4\\workspace\\PulseProject7\\driver\\chromedriver.exe");
 			
-				
-				 DesiredCapabilities capability = new DesiredCapabilities().firefox();
-		            capability.setBrowserName("firefox");
-		            capability.setPlatform(Platform.WINDOWS);
-		            
-		         //   DesiredCapabilities capabillities = new DesiredCapabilities("firefox", "3.6.", Platform.WINDOWS);
-		            capability.setCapability("job-name", "Fancy Firefox profile");
-		            FirefoxProfile profile = new FirefoxProfile();
-		            profile.setPreference("network.http.phishy-userpass-length", 255);
-		            capability.setCapability(FirefoxDriver.PROFILE, profile);
-		            
-		            
-		            
-		            
-				return DesiredCapabilities.firefox();
-				
-				
+			System.out.println("Opening firefox driver");
+
+		//	System.setProperty("webdriver.chrome.driver", "C:\\Users\\ssrivastava4\\workspace\\PulseProject7\\driver\\chromedriver.exe");
+		
+			
+
+			 DesiredCapabilities capability = new DesiredCapabilities().firefox();
+	            capability.setBrowserName("firefox");
+	            capability.setPlatform(Platform.WINDOWS);
+	            
+	         //   DesiredCapabilities capabillities = new DesiredCapabilities("firefox", "3.6.", Platform.WINDOWS);
+	            capability.setCapability("job-name", "Fancy Firefox profile");
+	            FirefoxProfile profile = new FirefoxProfile();
+	            profile.setPreference("network.http.phishy-userpass-length", 255);
+	            capability.setCapability(FirefoxDriver.PROFILE, profile);
+	            
+	            
+	            
+	            
+			return DesiredCapabilities.firefox();
+	            		
 				
 			case "chrome":
-				System.out.println("Opening chrome driver3");
+				System.out.println("Opening chrome driver");
 			
-		
+			
 				    DesiredCapabilities capability1 = DesiredCapabilities.chrome();
 				    capability1.setBrowserName("chrome");
 				    capability1.setPlatform(Platform.ANY);
 
 
 				    ChromeOptions options = new ChromeOptions();
-		            options.addArguments("--start-maximized");
+		          //  options.addArguments("--start-maximized");
 
 				    return DesiredCapabilities.chrome();
 					
-				
+
+				//	APP_LOGS.info("Chrome Browser opened");
 				
 				
 				
@@ -262,9 +273,7 @@ Logger APP_LOGS = Logger.getLogger("BaseTest");
 			
 			
 			}
-			
-	
-		
+					
 		}
 		
 		

@@ -127,7 +127,7 @@ public class BasePage
 	 public  String downloadPath = null;
 	 public static String uploadPath = null;
     public static String sqlresultPath = null;
-
+    static UnzipUtil ziputil = new UnzipUtil();
 		public static Properties CONFIG;
 		
 		
@@ -159,6 +159,54 @@ public class BasePage
 	public BasePage(WebDriver driver){
 		this.driver=driver;
 	}
+	
+	
+	
+	
+	
+	public  void MoveFileExample (WebDriver driver)
+	
+	{
+		
+	
+	    	try{
+	    		
+	    		
+	    		
+	    		BasePage b=new BasePage(driver);
+	    		
+	    		  downloadPath=b.preInitialize();
+	    		
+	    		  String home = System.getProperty("user.home");
+	    		  File file = new File(home+"/Downloads/");
+	    		  
+	    	   File afile =new File(file+"\\CompanyDirectoryParticipantImportTemplate_2.10.2019.xlsx");
+	    		
+	    	   if(afile.renameTo(new File(downloadPath + afile.getName())))
+	    	   
+	    	   {
+	    		System.out.println("File is moved successful!");
+	    	   }
+	    	   
+	    	   else
+	    	   
+	    	   {
+	    		System.out.println("File is failed to move!");
+	    	   }
+	    	    
+	    	}catch(Exception e){
+	    		e.printStackTrace();
+	    	}
+	    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -1067,10 +1115,69 @@ public class BasePage
 			}
 		}
 		
+public boolean isChecked(WebDriver driver, WebElement we)
+		
+		{
+
+	try
+	{
+
+if(we.isSelected())
+	
+	
+			
+			
+			{
+
+			System.out.println("Element is alreay checked");
+			return true;
+		} else
+		{
+			return false;
+		}
+
+	} catch (Throwable e)
+	{
+		keyerrormsg=e.getMessage().split("\n")[0].split("<")[0];
+		APP_LOGS.info(keyerrormsg);
+		return false;
+	}
+
+		}
+
+public boolean isUnChecked(WebDriver driver, WebElement we)
+		
+		{
+
+
+	try
+	{
+		if(!(we.isSelected()))
+						
+		{
+
+			APP_LOGS.info("Element is unchecked");
+			return true;
+		} else
+		{APP_LOGS.info("Element is checked");
+			return false;
+		}
+
+	} catch (Throwable e)
+	{
+		keyerrormsg=e.getMessage().split("\n")[0].split("<")[0];
+		APP_LOGS.info(keyerrormsg);
+		return false;
+	}
+
+		}
+
+
+
+
 		
 		
-		
-		public boolean isDisplayed(WebDriver driver, String selector)
+		public boolean isDisplayed(WebDriver driver, WebElement we)
 		
 		{
 
@@ -1078,7 +1185,7 @@ public class BasePage
 	try
 	{
 		
-		WebElement we= driver.findElement(By.xpath(selector));
+	//	WebElement we= driver.findElement(By.xpath(selector));
 		
 
 		if (we.isDisplayed())
@@ -1088,6 +1195,8 @@ public class BasePage
 			return true;
 		} else
 		{
+			
+			System.out.println("Element is not  displayed");
 			return false;
 		}
 
@@ -1102,6 +1211,116 @@ public class BasePage
 		
 		
 		
+		public boolean isNotDisplayed(WebDriver driver, WebElement we)
+		{
+
+
+	try
+	{
+
+		if (!(we.isDisplayed()))
+		{
+
+			System.out.println("Element is not  displayed");
+			return true;
+
+		} else
+		{
+			
+			System.out.println("Element is displayed");
+			return false;
+		}
+	} catch (Exception e)
+	{
+		if (e.getMessage().contains("No Such Element"))
+		{
+			return true;
+
+		}
+
+		else
+		{
+			return false;
+		}
+
+	}
+
+		}
+		
+		
+		public boolean isEnabled(WebDriver driver, WebElement we)
+		
+		{
+
+			try
+			{
+				
+		
+				if (we.isEnabled())
+				{
+
+					System.out.println("Element is Enabled");
+					return true;
+				} else
+				{
+					
+					System.out.println("Element is not Enabled");
+					return false;
+				}
+
+			} catch (Throwable e)
+			{
+				keyerrormsg=e.getMessage().split("\n")[0].split("<")[0];
+				System.out.println(keyerrormsg);
+				return false;
+			}
+		
+		
+		
+		}
+
+public boolean isNotEnabled(WebDriver driver, WebElement we)
+		
+		{
+	try
+	{
+
+		if (!(we.isEnabled()))
+		{
+
+			System.out.println("Element is not  Enabled");
+			return true;
+
+		} else
+		{
+			
+			System.out.println("Element is Enabled");
+			return false;
+		}
+	} catch (Exception e)
+	{
+		if (e.getMessage().contains("No Such Element"))
+		{
+			return true;
+
+		}
+
+		else
+		{
+			return false;
+		}
+
+	}
+
+	
+	
+		}
+
+
+		
+		
+		
+		
 		public boolean verifyElementPresent(WebDriver driver, String selector)
 		
 		{
@@ -1113,7 +1332,7 @@ public class BasePage
 			WebElement we= driver.findElement(By.xpath(selector));
 			
 		
-			if(driver.findElement(By.xpath(selector))!= null)
+			if(we!= null)
 			
 			
 			{
@@ -1145,6 +1364,7 @@ public class BasePage
 		
 		APP_LOGS.info("Element does not exists");
 		
+		
 		System.out.println("Element does not exists");
 		
 		
@@ -1156,6 +1376,9 @@ public class BasePage
 		
 		}
 
+		
+		
+		
 		
 		
 		public boolean openNewTab(WebDriver driver)
@@ -1263,6 +1486,647 @@ public class BasePage
 	}
 
 		}
+		
+		
+		
+		
+		
+		public boolean navigateBack(String object,String data)
+	    {
+	           APP_LOGS.info("Navigate back to previous page");
+	           try{
+	                  driver.navigate().back();
+
+	           }catch(Exception e)
+	           {
+	                  keyerrormsg=e.getMessage().split("\n")[0].split("<")[0];
+	                  APP_LOGS.info(keyerrormsg);
+	                  APP_LOGS.info("Navigate back to previous page failed");
+	                  return false;
+	           }
+	         APP_LOGS.info("Navigate back to previous page succeed");
+	         return true;
+	    }
+
+	public boolean extractZipFile(String object,String data)
+	{
+	       APP_LOGS.info("Extract zip file starts");
+	       try{
+	    	   ziputil.unzip(data,data.split("\\.zip")[0].toString());
+
+	       }catch(Exception e)
+	       {
+	              keyerrormsg=e.getMessage().split("\n")[0].split("<")[0];
+	              APP_LOGS.info(keyerrormsg);
+	              APP_LOGS.info("Extract zip file issue found");
+	              return false;
+	       }
+	     APP_LOGS.info("Extract zip file succeed");
+	     return true;
+	}
+
+		
+		
+		
+		
+		public  boolean compareExcel(String object, String data){
+			APP_LOGS.debug("Comparing Excel Equality");
+			Xls_Reader srcXls=null;
+			Xls_Reader desXls=null;
+			List<String> dataFromSrcExcel=new ArrayList<String>();
+			List<String> dataFromDesExcel=new ArrayList<String>();
+			try{
+				String[] splittedObject=object.split("\\|");
+				String[] splittedData=data.split("\\|");
+
+				String srcFile=splittedData[0];
+				 if(srcFile.split("-")[1].equalsIgnoreCase("GetLastDownloadedFile"))
+		         {
+
+					 srcFile = downloadPath+"\\"+getRunTimeVariable("GetLastDownloadedFile");
+		              // for test purpose
+		              //TempData[2]="C:\\Users\\hsingh4\\Downloads\\EmailDeliveryDetails.csv";
+		         }
+				String scrSheet=splittedData[1];
+				String srcStartRow=splittedData[2];
+				String srcEndRow=splittedData[3];
+				String srcStartCol=splittedData[4];
+				String srcEndCol=splittedData[5];
+				String srcReqColForUpdate=splittedData[6];
+				String srcReqDataToUpdate=splittedData[7];
+
+
+				String desFile=splittedData[8];
+				 if(desFile.split("-")[1].equalsIgnoreCase("GetLastDownloadedFile"))
+		         {
+
+					 desFile = downloadPath+"\\"+getRunTimeVariable("GetLastDownloadedFile");
+		              // for test purpose
+		              //TempData[2]="C:\\Users\\hsingh4\\Downloads\\EmailDeliveryDetails.csv";
+		         }
+				String desSheet=splittedData[9];
+				String desStartRow=splittedData[10];
+				String desEndRow=splittedData[11];
+				String desStartCol=splittedData[12];
+				String desEndCol=splittedData[13];
+				String desReqColForUpdate=splittedData[14];
+				String desReqDataToUpdate=splittedData[15];
+
+
+				srcXls=new Xls_Reader(srcFile);
+				desXls=new Xls_Reader(desFile);
+				if(Integer.parseInt(srcEndRow)==0){
+					srcEndRow=String.valueOf(srcXls.getRowCount(scrSheet));
+				}
+
+				if(Integer.parseInt(srcEndCol)==0){
+					srcEndCol=String.valueOf(srcXls.getColumnCount(scrSheet));
+				}
+
+				if(Integer.parseInt(desEndRow)==0){
+					desEndRow=String.valueOf(desXls.getRowCount(desSheet));
+				}
+
+				if(Integer.parseInt(desEndCol)==0){
+					desEndCol=String.valueOf(desXls.getColumnCount(desSheet));
+				}
+
+				APP_LOGS.debug("Source End Row "+srcEndRow);
+				APP_LOGS.debug("Source End Column "+srcEndCol);
+
+				APP_LOGS.debug("Destination End Row "+desEndRow);
+				APP_LOGS.debug("Destination End Column "+desEndCol);
+
+				for(int i=Integer.parseInt(srcStartRow);i<=Integer.parseInt(srcEndRow);i++){
+					for(int j=Integer.parseInt(srcStartCol);j<=Integer.parseInt(srcEndCol);j++){
+						if(srcReqColForUpdate.equalsIgnoreCase("NA")){
+							dataFromSrcExcel.add(srcXls.getCellData(scrSheet, j, i));
+						}else{
+							dataFromSrcExcel.add(srcReqDataToUpdate);
+						}
+					}
+				}
+				APP_LOGS.debug("Data from source excel "+dataFromSrcExcel);
+
+				for(int i=Integer.parseInt(desStartRow);i<=Integer.parseInt(desEndRow);i++){
+					for(int j=Integer.parseInt(desStartCol);j<=Integer.parseInt(desEndCol);j++){
+						if(desReqColForUpdate.equalsIgnoreCase("NA")){
+							dataFromDesExcel.add(desXls.getCellData(desSheet, j, i));
+						}else{
+							dataFromDesExcel.add(desReqDataToUpdate);
+						}
+
+					}
+				}
+				APP_LOGS.debug("Data from Destination excel "+dataFromDesExcel);
+				for(int i=0;i<dataFromSrcExcel.size();i++){
+					for(int j=0;j<dataFromDesExcel.size();j++){
+						if(i==j){
+							APP_LOGS.debug(dataFromSrcExcel.get(i));
+							APP_LOGS.debug(dataFromDesExcel.get(j));
+							Assert.assertEquals(dataFromSrcExcel.get(i),dataFromDesExcel.get(j));
+						}
+					}
+				}
+			}catch(Throwable t){
+				APP_LOGS.debug(t+ " Comparing Excel Equality failed");
+				return status=false;
+			}
+			APP_LOGS.debug("Comparing Excel Equality succeed");
+			return status=true;
+		}
+
+
+
+
+/*Start adding for comparing two Excels data*/ 
+public boolean compareExcelSheets(String object, String data) {
+
+try {
+    APP_LOGS.info("compareExcelSheets");
+    int flag=0;
+    /*load's and reads 2 excel files*/
+    String[] TempData=data.split("\\|");
+    FileInputStream exlFile1 = new FileInputStream(new File(TempData[0]));
+    FileInputStream exlfile2 = new FileInputStream(new File(TempData[2]));
+
+    /*load workbooks from FileInputStream variables declared above:*/
+    XSSFWorkbook wBook1 = new XSSFWorkbook(exlFile1);
+    XSSFWorkbook wBook2 = new XSSFWorkbook(exlfile2);
+
+    int index1 = wBook1.getSheetIndex(TempData[1]);
+    int index2 = wBook2.getSheetIndex(TempData[3]);
+    
+    
+    /*load sheets from XSSFWorkbook variables declared above:*/
+    XSSFSheet sheet1 = wBook1.getSheetAt(index1);
+    XSSFSheet sheet2 = wBook2.getSheetAt(index2);
+    /* Compare the data */
+    if(compareTwoSheets(sheet1, sheet2)) {
+
+	APP_LOGS.info("\n\nThe two excel sheets are Equal");
+	flag=1;
+    } else {
+	//APP_LOGS.info("\n\nThe two excel sheets are Not Equal");
+	keyerrormsg="The two excel sheets are Not Equal" +keyerrormsg;
+	APP_LOGS.info(keyerrormsg);
+	}
+
+    //close files
+    exlFile1.close();
+    exlfile2.close();
+    
+    if (flag==1)
+    	return true;
+    else
+    	return false;
+
+} catch (FileNotFoundException e) {
+	keyerrormsg=e.getMessage().split("\n")[0].split("<")[0];
+	APP_LOGS.info(keyerrormsg);
+    return false;
+} catch (IOException e) {
+	keyerrormsg=e.getMessage().split("\n")[0].split("<")[0];
+	APP_LOGS.info(keyerrormsg);
+    return false;
+}
+
+}
+
+
+
+
+private static boolean compareTwoSheets(XSSFSheet sheet1, XSSFSheet sheet2) {
+	// TODO Auto-generated method stub
+	int firstRow1 = sheet1.getFirstRowNum();
+	int lastRow1 = sheet1.getLastRowNum();
+	boolean equalSheets = true;
+	for(int i=firstRow1; i <= lastRow1; i++) {
+
+	    APP_LOGS.info("\n\nComparing Row "+i);
+
+	    XSSFRow row1 = sheet1.getRow(i);
+	    XSSFRow row2 = sheet2.getRow(i);
+	    if(!compareTwoRows(row1, row2)) {
+		equalSheets = false;
+	keyerrormsg=keyerrormsg+("\n Row "+i+" - Not Equal");
+		APP_LOGS.info(keyerrormsg);
+		
+		break;
+	    } else {
+		APP_LOGS.info("Row "+i+" - Equal");
+	    }
+	}
+	return equalSheets;
+   }
+		
+
+private static boolean compareTwoRows(XSSFRow row1, XSSFRow row2) {
+	// TODO Auto-generated method stub
+	if((row1 == null) && (row2 == null)) {
+	    return true;
+	} else if((row1 == null) || (row2 == null)) {
+	    return false;
+	}
+
+	int firstCell1 = row1.getFirstCellNum();
+	int lastCell1 = row1.getLastCellNum();
+	boolean equalRows = true;
+
+	// Compare all cells in a row
+	for(int i=firstCell1; i <= lastCell1; i++) {
+	    XSSFCell cell1 = row1.getCell(i);
+	    XSSFCell cell2 = row2.getCell(i);
+	    if(!compareTwoCells(cell1, cell2)) {
+		equalRows = false;
+		
+		
+		keyerrormsg=keyerrormsg+("\n Cell "+i+" - Not Equal");
+		APP_LOGS.info(keyerrormsg);
+		
+		break;
+	    } else {
+		APP_LOGS.info("       Cell "+i+" - Equal");
+	    }
+	}
+	return equalRows;
+    }
+
+
+private static boolean compareTwoCells(XSSFCell cell1, XSSFCell cell2) {
+// TODO Auto-generated method stub
+/* Compare the sheets cell are empty*/
+if((cell1 == null) && (cell2 == null))
+{
+    return true;
+} 
+else if((cell1 == null) || (cell2 == null))
+{
+    return false;
+}
+
+boolean equalCells = false;
+/*Get the type of cell*/
+int type1 = cell1.getCellType();
+int type2 = cell2.getCellType();
+if (type1 == type2) {
+    if (cell1.getCellStyle().equals(cell2.getCellStyle())) {
+	// Compare cells based on its type
+	switch (cell1.getCellType()) {
+	case HSSFCell.CELL_TYPE_FORMULA:
+	    if (cell1.getCellFormula().equals(cell2.getCellFormula())) {
+		equalCells = true;
+	    }
+	    break;
+	case HSSFCell.CELL_TYPE_NUMERIC:
+	    if (cell1.getNumericCellValue() == cell2
+	    .getNumericCellValue()) {
+		equalCells = true;
+	    }
+	    break;
+	case HSSFCell.CELL_TYPE_STRING:
+	    if (cell1.getStringCellValue().equals(cell2
+		    .getStringCellValue())) {
+		equalCells = true;
+	    }
+	    break;
+	case HSSFCell.CELL_TYPE_BLANK:
+	    if (cell2.getCellType() == HSSFCell.CELL_TYPE_BLANK) {
+		equalCells = true;
+	    }
+	    break;
+	case HSSFCell.CELL_TYPE_BOOLEAN:
+	    if (cell1.getBooleanCellValue() == cell2
+	    .getBooleanCellValue()) {
+		equalCells = true;
+	    }
+	    break;
+	case HSSFCell.CELL_TYPE_ERROR:
+	    if (cell1.getErrorCellValue() == cell2.getErrorCellValue()) {
+		equalCells = true;
+	    }
+	    break;
+	default:
+	    if (cell1.getStringCellValue().equals(
+		    cell2.getStringCellValue())) {
+		equalCells = true;
+	    }
+	    break;
+	}
+    } else {
+    	if (cell1.getStringCellValue().equals(
+			    cell2.getStringCellValue())) {
+			equalCells = true;
+		    }else
+	return false;
+    }
+} else {
+    return false;
+}
+return equalCells;
+}
+/* End adding for comparing two Excels data*/ 
+
+
+
+		public static void CompareExcels(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+		
+
+		public static void WriteLog(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+
+		public static void ClickByElementPosition(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+
+		public static void ScrollDown(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+
+		public static void CheckExcelContains(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+
+		public static void IsElementVisible(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+		
+
+		public static void IsElementNotVisible(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+		
+
+		public static void IsElementDisplayed(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+
+		public static void IsElementNotDisplayed(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+		
+
+
+		public static void IsElementEnabled(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+
+		public static void IsElementNotEnabled(WebDriver driver)
+		{
+		
+		
+		}
+		
+
+
+	
+		
+
+		public static void MouseHoverToElementAndClick(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+		
+
+		public static void ScrollToElement(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+		
+
+		public static void ExtractTextFromPDF(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+
+		public static void ReadPdfFiles(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+
+		public static void getExcelSheetName(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+
+		public static void GetallValuesFromCEBDropdown(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+
+		public static void UploadFileMthd(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+		
+		public static void WriteToExcel(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+		
+		
+		public static void readExcel(WebDriver driver)
+		{
+		
+		
+		
+		}
+		
+		
+		
+		public static void readExcelrowcolumnwise(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+		
+		public static void ReaddataonmultiplesheetExcelrowcolumnwise(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+		
+		public static void ReaddataonmultiplesheetExcelrowcolumnwise1(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+		
+		public static void verifydataonmultiplesheetExcelrowcolumnwise(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+		
+		public static void executesqlandwritetocsv(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+		public static void executesqlandwritetocsvmultipletables(WebDriver driver)
+		{
+		
+		
+		}
+		
+		public static void Readfromcsv(WebDriver driver)
+		{
+		
+		
+		}
+		
+		public static void Readfromcsvrowcolumnwise(WebDriver driver)
+		{
+		
+		
+		}
+		
+		public static void csvcompare(WebDriver driver)
+		{
+		
+		
+		}
+		
+		public static void csvComparerowcolumnnwise(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+		
+		public static void csvCompareExcel(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+		public static void verifyCSVColumnTextWithPPT(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+		public static void verifyTextpresentinPowerPoint(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+		public static void verifyTextnotpresentinPowerPoint(WebDriver driver)
+		{
+		
+		
+		}
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	
 		 	public boolean executesqlandverifytext()
@@ -1869,12 +2733,13 @@ public boolean getDownloadedFileDetails(String data)
 		}
 			}	
 			
-			
+	
+
+
+
 public String getLastDownloadedFile(String data)
 
 {
-	
-	
 	
 	String Key="";
 	
@@ -1886,36 +2751,18 @@ APP_LOGS.info("In GetLastDownloadedFile");
 
 
 String path="";
-//String[] Tempdata = data.split("\\|");
-
-//if(Tempdata.length==2)
-//{
-	
-	
-	
-/*if(Tempdata[1].equalsIgnoreCase("GetLastDownloadedFile")) 
-	path=downloadPath; 
-}*/
 
 if(data.equalsIgnoreCase("GetLastDownloadedFile"))
 	
 	
 {	
-
-
- 
 	path=downloadPath; 
 
-	
 	
 }
 File folder = new File(path);
 File[] listOfFiles = folder.listFiles();
-// folder.
-// Set<String> FileName = new HashSet<String>();
 
-
-//String itrFileName = null;
 
 
 listOfFiles = folder.listFiles();
@@ -1989,6 +2836,18 @@ return itrFileName;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 public  void configInitialize() throws IOException
 {
 
@@ -2039,6 +2898,8 @@ public  String preInitialize() throws Exception {
 	
 	
 	downloadPath=downloadPath+"\\AutomationNG_Reports\\Reports\\Downloads";
+	
+	
 	/*uploadPath=uploadPath  +"\\AutomationNG\\Upload\\";
 	screenshotPath=screenshotPath+ "\\AutomatioNG_Reports\\Reports\\Test_RunId\\Screenshots\\";
 	sqlresultPath=sqlresultPath+ "\\AutomatioNG_Reports\\Reports\\Test_RunId_\\SqlResults\\";

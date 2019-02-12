@@ -1,0 +1,2 @@
+2019-02-10 17:07:24 INFO  BasePage:781 - keyerrormsg=no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='navbar-container']//ul/li/a[@href='#']"}
+2019-02-10 17:07:26 INFO  BasePage:781 - keyerrormsg=no such element: Unable to locate element: {"method":"xpath","selector":"//A[contains(., "Logout")]   "}

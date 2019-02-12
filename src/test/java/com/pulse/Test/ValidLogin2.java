@@ -52,7 +52,7 @@ import generic.Excel;
 	
 	  Excel eLib = new Excel();
 	
-	String url = eLib.getCellValue(path,"PreCon", 1, 0);
+	String url = eLib.getCellValue(pathexcel,"PreCon", 1, 0);
 	
 	  public static String logfiletimestamp;
 	    
@@ -70,6 +70,9 @@ import generic.Excel;
 			
 			driver.get(url);
 			
+			Thread.sleep(15000);
+			
+			
 	//		 Randomaplphanumber R=new Randomaplphanumber();
 			  
 	//		String r=  R.Random();
@@ -83,7 +86,7 @@ import generic.Excel;
 				
 			
 		
-//		Logger APP_LOGS = Logger.getLogger(ValidLogin2.class);
+         		Logger APP_LOGS = Logger.getLogger(ValidLogin2.class);
 				
 
 				LoginPage l=new LoginPage(driver);
@@ -95,7 +98,7 @@ import generic.Excel;
 
 				
 				
-	//			APP_LOGS.info("type username");
+				APP_LOGS.info("type username");
 				
 				
 				//		l.setUserName(un);
@@ -108,23 +111,23 @@ import generic.Excel;
 //		        r= BaseTest.getScreenshot(driver, method.getName());
 
 			
-	//		APP_LOGS.info("type password");
+	         	APP_LOGS.info("type password");
 				 
 				 
 				l.setPassword(pw);
 				
-				Thread.sleep(5000);
+				Thread.sleep(15000);
 
 //		        r= BaseTest.getScreenshot(driver, method.getName());
 					
 					
 
 			
-	//			APP_LOGS.info("click select");
+			APP_LOGS.info("click login");
 				
 				l.clickLogin();
 				
-				Thread.sleep(5000);
+				Thread.sleep(15000);
 				
 				
 	
@@ -132,12 +135,12 @@ import generic.Excel;
 	//	        r= BaseTest.getScreenshot(driver, method.getName());
 					
 
-	//			APP_LOGS.info("click dropdown ");
+			APP_LOGS.info("click dropdown ");
 				
 				
 				
 				l.dropdowntheaccount(accnt);
-				Thread.sleep(5000);
+				Thread.sleep(15000);
 			
 				
 
@@ -145,11 +148,11 @@ import generic.Excel;
 	//		    r= BaseTest.getScreenshot(driver, method.getName());
 						
 
-	//			APP_LOGS.info("click select");
+			APP_LOGS.info("click select");
 				
 		
 				l.clickselect();
-				Thread.sleep(5000);
+				Thread.sleep(15000);
 				
 
 	//			r = BaseTest.getScreenshot(driver, method.getName());
@@ -159,12 +162,13 @@ import generic.Excel;
 				
 				h.clickArrow();
 				
-
-//				APP_LOGS.info("click arrrow down");
+				Thread.sleep(15000);
+			APP_LOGS.info("click arrrow down");
 				
 				h.Logout();
+				Thread.sleep(15000);
 				
-//			APP_LOGS.info("click logout");
+			APP_LOGS.info("click logout");
 		}
 
 	

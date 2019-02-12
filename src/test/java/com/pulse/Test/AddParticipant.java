@@ -45,9 +45,11 @@ import generic.Excel;
 	static int teststepcount=000000;
 	
 	
-	//public static Logger APP_LOGS = Logger.getLogger("devpinoyLogger");
-
-
+	public static Logger APP_LOGS = Logger.getLogger("devpinoyLogger");
+	  Excel eLib = new Excel();
+		
+	String url = eLib.getCellValue(pathexcel,"PreCon", 1, 0);
+	
 	  public static String logfiletimestamp;
 
 		public static Properties CONFIG;
@@ -61,13 +63,21 @@ import generic.Excel;
 		
 		{
 			
+			
+			
+			driver.get(url);
+			
+			
+			Thread.sleep(15000);
+			
+			
 	//		 Randomaplphanumber R=new Randomaplphanumber();
 			  
 	//		String r=  R.Random();
 			
-				String un=Excel.getCellValue(XLPATH,"ValidLogin",1,0);
-				String pw=Excel.getCellValue(XLPATH,"ValidLogin",1,1);
-				String accnt=Excel.getCellValue(XLPATH,"ValidLogin",1,2);
+				String un=Excel.getCellValue(XLPATH,"ValidLogin",3,0);
+				String pw=Excel.getCellValue(XLPATH,"ValidLogin",3,1);
+				String accnt=Excel.getCellValue(XLPATH,"ValidLogin",3,2);
 	
 				String cb=Excel.getCellValue(XLPATH,"Author",1,3);
 			       
@@ -84,41 +94,62 @@ import generic.Excel;
 		
 				
 				l.setUserName(un);
+				Thread.sleep(15000);
+				
+				APP_LOGS.info("type username");
 				
 				l.setPassword(pw);
 				
+				Thread.sleep(15000);
+				APP_LOGS.info("type password");
+				
 				l.clickLogin();
 				
+				Thread.sleep(15000);
+				
+				APP_LOGS.info("click login");
 				l.dropdowntheaccount(accnt);
+				
+				Thread.sleep(15000);
+				
+				APP_LOGS.info("click dropdown ");
 				
 				
 				l.clickselect();
-				cd.clickArrow();
+				
+				Thread.sleep(15000);
+				
+			
+				APP_LOGS.info("click select");
+			//	cd.clickArrow();
+				
+				Thread.sleep(15000);
+				
+				
 				
 				cd.clickSettings();
+				
+				Thread.sleep(15000);
+				
+				
+				APP_LOGS.info("click setings");
+				
 				cd.clickCompanyDirectory();
+				Thread.sleep(15000);
+				
+				APP_LOGS.info("click CD");
+				
 				cd.clickParticipants();
+				Thread.sleep(15000);
+				
+				
 				
 				cd.clickuploadparticipantscompany();
 				
-				Thread.sleep(25000);
+				Thread.sleep(15000);
 				
 				
-				//cd.configInitialize();
-				
-				//cd. preInitialize() ;
-				
-			/*	
-				downloadPath = System.getProperty("user.dir");
-				
-				//String data=System.getProperty(downloadPath);
-				
-				
-				
-				
-				System.out.println(downloadPath);*/
-				
-			//	String data=System.getProperty("downloadPath");
+			
 				
 			BasePage b=new BasePage(driver);
 			
@@ -126,35 +157,39 @@ import generic.Excel;
 			
 			
 				b.getDownloadedFileDetails(data);
+				Thread.sleep(15000);
+				
 				
 				
 				
 				cd.clickDownloadSampleImportTemplate();
 				
-
+				Thread.sleep(15000);
+				
+				
 				
 			//	b.getLastDownloadedFile("GetLastDownloadedFile");
 				
 				
 				String fileName =b.getLastDownloadedFile("GetLastDownloadedFile");
 				
-				
-				
-				
-				
-				
-				
+			
+		    		
 				
 				System.out.println("Last downloaded file is "+fileName);
 				
 				
-				//String fileLocationPath=b.getfiledownloadlocation(fileName);
-				
+			
 			
 				
+				Thread.sleep(15000);
 				
-				b.addeditTextinExcel(downloadPath, fileName, "Employee File", 0, 2, "charu2");
-	}
+				
+		//		b.addeditTextinExcel(downloadPath, fileName, "Employee File", 0, 2, "charu2");
+	
+		    	
+				  
+		}
 
 
 

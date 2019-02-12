@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Parallel test suite" duration-ms="28599" started-at="2019-01-14T11:14:46Z" finished-at="2019-01-14T11:15:14Z">
+  <suite name="Parallel test suite" duration-ms="331348" started-at="2019-02-11T09:14:52Z" finished-at="2019-02-11T09:20:23Z">
     <groups>
     </groups>
-    <test name="Regression 1" duration-ms="28599" started-at="2019-01-14T11:14:46Z" finished-at="2019-01-14T11:15:14Z">
-      <class name="com.pulse.Test.ValidLogin">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.pulse.Test.ValidLogin@7133da86]" name="setUp" is-config="true" duration-ms="4210" started-at="2019-01-14T06:14:46Z" finished-at="2019-01-14T06:14:50Z">
+    <test name="Regression 1" duration-ms="331348" started-at="2019-02-11T09:14:52Z" finished-at="2019-02-11T09:20:23Z">
+      <class name="com.pulse.Test.ValidLogin2">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.pulse.Test.ValidLogin2@71def8f8]" name="setUp" is-config="true" duration-ms="48673" started-at="2019-02-11T14:44:52Z" finished-at="2019-02-11T14:45:40Z">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,63 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testValidLogin1(java.lang.reflect.Method)[pri:0, instance:com.pulse.Test.ValidLogin@7133da86]" name="testValidLogin1" duration-ms="23533" started-at="2019-01-14T06:14:50Z" finished-at="2019-01-14T06:15:13Z">
+        <test-method status="PASS" signature="testValidLogin2(java.lang.reflect.Method)[pri:0, instance:com.pulse.Test.ValidLogin2@71def8f8]" name="testValidLogin2" duration-ms="165659" started-at="2019-02-11T14:45:41Z" finished-at="2019-02-11T14:48:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.pulse.Test.ValidLogin2.testValidLogin2(java.lang.reflect.Method) throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidLogin2 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pulse.Test.ValidLogin2@71def8f8]" name="tearDown" is-config="true" duration-ms="3788" started-at="2019-02-11T14:48:26Z" finished-at="2019-02-11T14:48:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.pulse.Test.ValidLogin2 -->
+      <class name="com.pulse.Test.AddParticipant">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.pulse.Test.AddParticipant@3bf9ce3e]" name="setUp" is-config="true" duration-ms="48673" started-at="2019-02-11T14:44:52Z" finished-at="2019-02-11T14:45:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="addparticipant(java.lang.reflect.Method)[pri:1, instance:com.pulse.Test.AddParticipant@3bf9ce3e]" name="addparticipant" duration-ms="281239" started-at="2019-02-11T14:45:41Z" finished-at="2019-02-11T14:50:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.pulse.Test.AddParticipant.addparticipant(java.lang.reflect.Method) throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addparticipant -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pulse.Test.AddParticipant@3bf9ce3e]" name="tearDown" is-config="true" duration-ms="1172" started-at="2019-02-11T14:50:22Z" finished-at="2019-02-11T14:50:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.pulse.Test.AddParticipant -->
+      <class name="com.pulse.Test.ValidLogin">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.pulse.Test.ValidLogin@16610890]" name="setUp" is-config="true" duration-ms="48676" started-at="2019-02-11T14:44:52Z" finished-at="2019-02-11T14:45:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testValidLogin1(java.lang.reflect.Method)[pri:0, instance:com.pulse.Test.ValidLogin@16610890]" name="testValidLogin1" duration-ms="189396" started-at="2019-02-11T14:45:41Z" finished-at="2019-02-11T14:48:50Z">
           <params>
             <param index="0">
               <value>
@@ -29,7 +85,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidLogin1 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pulse.Test.ValidLogin@7133da86]" name="tearDown" is-config="true" duration-ms="838" started-at="2019-01-14T06:15:13Z" finished-at="2019-01-14T06:15:14Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pulse.Test.ValidLogin@16610890]" name="tearDown" is-config="true" duration-ms="1375" started-at="2019-02-11T14:48:50Z" finished-at="2019-02-11T14:48:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

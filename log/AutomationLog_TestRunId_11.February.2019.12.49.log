@@ -1,0 +1,20 @@
+2019-02-11 12:50:07 INFO  AddParticipant:99 - type username
+2019-02-11 12:50:22 INFO  AddParticipant:104 - type password
+2019-02-11 12:50:40 INFO  AddParticipant:110 - click login
+2019-02-11 12:50:55 INFO  AddParticipant:115 - click dropdown 
+2019-02-11 12:51:16 INFO  AddParticipant:123 - click select
+2019-02-11 12:51:49 INFO  AddParticipant:135 - click setings
+2019-02-11 12:52:04 INFO  AddParticipant:140 - click CD
+2019-02-11 12:52:35 INFO  BasePage:2668 - In GetDownloadedFileDetails
+2019-02-11 12:52:35 INFO  BasePage:2706 - NoOfFiles4
+2019-02-11 12:52:35 INFO  BasePage:2714 - DownloadedFiles-->.gitignore
+2019-02-11 12:52:35 INFO  BasePage:2714 - DownloadedFiles-->CompanyDirectoryParticipantImportTemplate_7.23.2018.xlsx
+2019-02-11 12:52:35 INFO  BasePage:2714 - DownloadedFiles-->SpotlightReport65872573979636679169600203613.ppt
+2019-02-11 12:52:35 INFO  BasePage:2714 - DownloadedFiles-->SpotlightReport65872573979636679178778075560.ppt
+2019-02-11 12:52:35 INFO  BasePage:2722 - GetDownloadedFileDetails Executed
+2019-02-11 12:53:07 INFO  BasePage:2749 - In GetLastDownloadedFile
+2019-02-11 12:53:07 INFO  BasePage:2803 - In setRunTimeVariable 
+2019-02-11 12:53:07 INFO  BasePage:2808 - In setRunTimeVariable Key:  Value: added successfully
+2019-02-11 12:53:07 INFO  BasePage:2949 - In setRunTimeVariable 
+2019-02-11 12:53:07 INFO  BasePage:2951 - In setRunTimeVariable Key: GetLastDownloadedFile Value: SpotlightReport65872573979636679178778075560.pptadded successfully
+2019-02-11 12:53:07 INFO  BasePage:2816 - GetLastDownloadedFile name is SpotlightReport65872573979636679178778075560.ppt

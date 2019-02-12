@@ -1,0 +1,15 @@
+2019-02-10 17:16:47 INFO  BasePage:781 - keyerrormsg=no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='navbar-container']//ul/li/a[@href='#']"}
+2019-02-10 17:16:47 INFO  BasePage:781 - keyerrormsg=no such element: Unable to locate element: {"method":"xpath","selector":"//A[contains(., "Logout")]   "}
+2019-02-10 17:19:59 INFO  BasePage:2625 - In GetDownloadedFileDetails
+2019-02-10 17:19:59 INFO  BasePage:2663 - NoOfFiles4
+2019-02-10 17:19:59 INFO  BasePage:2671 - DownloadedFiles-->.gitignore
+2019-02-10 17:19:59 INFO  BasePage:2671 - DownloadedFiles-->CompanyDirectoryParticipantImportTemplate_7.23.2018.xlsx
+2019-02-10 17:19:59 INFO  BasePage:2671 - DownloadedFiles-->SpotlightReport65872573979636679169600203613.ppt
+2019-02-10 17:19:59 INFO  BasePage:2671 - DownloadedFiles-->SpotlightReport65872573979636679178778075560.ppt
+2019-02-10 17:19:59 INFO  BasePage:2679 - GetDownloadedFileDetails Executed
+2019-02-10 17:20:51 INFO  BasePage:2705 - In GetLastDownloadedFile
+2019-02-10 17:20:51 INFO  BasePage:2777 - In setRunTimeVariable 
+2019-02-10 17:20:51 INFO  BasePage:2782 - In setRunTimeVariable Key:  Value: added successfully
+2019-02-10 17:20:51 INFO  BasePage:2909 - In setRunTimeVariable 
+2019-02-10 17:20:51 INFO  BasePage:2911 - In setRunTimeVariable Key: GetLastDownloadedFile Value: SpotlightReport65872573979636679178778075560.pptadded successfully
+2019-02-10 17:20:51 INFO  BasePage:2790 - GetLastDownloadedFile name is SpotlightReport65872573979636679178778075560.ppt
